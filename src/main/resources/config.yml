@@ -13,6 +13,7 @@ custominventory:
     namecolor: DARK_GREEN
     slot: 1
     custommodeldata: 2
+
 gamemodes:
   adventure:
     itemtype: GRASS_BLOCK
@@ -38,3 +39,14 @@ gamemodes:
     namecolor: WHITE
     custommodeldata: 4
     index: 3
+
+maps:
+  survival1:
+    name: Adventure 1
+    gamemode: adventure
+    localfilename:
+    description: This is the description for ad 1
+    difficulty: 6/10
+    itemtype: PAPER
+    nbt: 1
+    worldspawn:

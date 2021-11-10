@@ -22,8 +22,8 @@ public class SQLManager{
 
     public static SQLManager getInstance() { return _instance; }
 
-    public List<String> getFriendList(Player p){
-        List<String> friendList = new ArrayList<>();
+    public List<FriendInstance> getFriendList(Player p){
+        List<FriendInstance> friendList = new ArrayList<>();
 
         try {
             // Get User ID by Player display name
@@ -56,7 +56,7 @@ public class SQLManager{
                 String username = rs3.getString("username");
                 System.out.println(username); //Debug
 
-                friendList.add(username);
+                friendList.add(new FriendInstance(username));
 
             }
 

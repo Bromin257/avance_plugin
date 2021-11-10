@@ -17,11 +17,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.event.block.Action;
-import org.bukkit.inventory.meta.SkullMeta;
 
 import java.sql.*;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
 public class GUISelector implements Listener {
@@ -31,38 +28,17 @@ public class GUISelector implements Listener {
     // Get config.yml file
     FileConfiguration config = Main.getCustomConfig();
 
+    //! Find if it is used
     @EventHandler
     public void loadFriendList(PlayerJoinEvent e) {
-
         Player p = e.getPlayer();
-
     }
 
     // Method to open the required gui (h = type of GUI)
     public void openNewGui(Player p, int h) {
 
         if (h == 1) {
-            gui = Bukkit.createInventory(null, InventoryType.HOPPER, "Maps");
-
-            for (String key: config.getConfigurationSection("gamemodes").getKeys(false)) {
-                String m = config.getConfigurationSection("gamemodes").getString(key+ ".itemtype");
-                String n = config.getConfigurationSection("gamemodes").getString(key+ ".displayname");
-                String c = config.getConfigurationSection("gamemodes").getString(key+ ".namecolor");
-                int l = config.getConfigurationSection("gamemodes").getInt(key+ ".custommodeldata");
-                int i = config.getConfigurationSection("gamemodes").getInt(key+ ".index");
-
-
-                ItemStack item = new ItemStack(Material.valueOf(m), 1);
-                ItemMeta meta = item.getItemMeta();
-                meta.setDisplayName(ChatColor.valueOf(c) + n);
-                meta.setCustomModelData(l);
-                item.setItemMeta(meta);
-
-                gui.setItem(i, item);
-            }
-
-            p.openInventory(gui);
-
+            MapList.openMaps(p);
         } else if (h == 2) {
 
             FriendList.openFriendSelector(p);
@@ -88,17 +64,20 @@ public class GUISelector implements Listener {
     }
 
     // Event handler for player interaction with map selector items
+    /*
     @EventHandler
     public void openMapList(InventoryClickEvent e) {
         Player p = (Player) e.getWhoClicked();
         int i = Objects.requireNonNull(e.getCurrentItem().getItemMeta().getCustomModelData());
 
 
-        MapSelector map = new MapSelector();
+        MapList map = new MapList();
         map.mapType = i;
         map.player = p;
         map.openMaps();
     }
+
+     */
 
 
 }

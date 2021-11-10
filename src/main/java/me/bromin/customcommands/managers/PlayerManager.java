@@ -25,7 +25,7 @@ public class PlayerManager implements Listener {
     @EventHandler
     public void playerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
-        List<String> friendList = SQLManager.getInstance().getFriendList(p);
+        List<FriendInstance> friendList = SQLManager.getInstance().getFriendList(p);
         PlayerInstance currentPLayer = new PlayerInstance(p, friendList);
         onlinePlayers.add(currentPLayer);
 
