@@ -32,7 +32,7 @@ public class GUISelector implements Listener {
     FileConfiguration config = Main.getCustomConfig();
 
     @EventHandler
-    public void loadFriendList(PlayerJoinEvent e) throws SQLException {
+    public void loadFriendList(PlayerJoinEvent e) {
 
         Player p = e.getPlayer();
 

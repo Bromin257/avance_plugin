@@ -26,7 +26,7 @@ public class SQLManager{
         List<String> friendList = new ArrayList<>();
 
         try {
-            // Get User ID by Player displayname
+            // Get User ID by Player display name
             PreparedStatement stmt = conn.prepareStatement("SELECT id FROM tbl_users WHERE username = ?");
 
             stmt.setString(1, p.getDisplayName());
