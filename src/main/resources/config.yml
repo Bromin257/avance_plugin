@@ -41,8 +41,26 @@ gamemodes:
     index: 3
 
 maps:
-  survival1:
+  adventure1:
     name: Adventure 1
+    gamemode: adventure
+    localfilename:
+    description: This is the description for ad 1
+    difficulty: 6/10
+    itemtype: PAPER
+    nbt: 1
+    worldspawn:
+  adventure2:
+    name: Adventure 1
+    gamemode: adventure
+    localfilename:
+    description: This is the description for ad 1
+    difficulty: 6/10
+    itemtype: PAPER
+    nbt: 1
+    worldspawn:
+  puzzle1:
+    name: Puzzle 1
     gamemode: adventure
     localfilename:
     description: This is the description for ad 1

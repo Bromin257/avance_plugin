@@ -1,21 +1,14 @@
 package me.bromin.customcommands.guis;
 
 import me.bromin.customcommands.Main;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.event.block.Action;
 
 import java.sql.*;
@@ -38,7 +31,7 @@ public class GUISelector implements Listener {
     public void openNewGui(Player p, int h) {
 
         if (h == 1) {
-            MapList.openMaps(p);
+            GamemodeList.openGamemodeList(p);
         } else if (h == 2) {
 
             FriendList.openFriendSelector(p);
