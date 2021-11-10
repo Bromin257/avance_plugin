@@ -1,18 +1,25 @@
 package me.bromin.customcommands.managers;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import me.bromin.customcommands.managers.SQLManager;
-import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerManager implements Listener {
-    private final List<PlayerInstance> onlinePlayers = new ArrayList<>();
+    private final static List<PlayerInstance> onlinePlayers = new ArrayList<>();
+
+    public static List<PlayerInstance> getOnlinePlayers() { return onlinePlayers; }
+
+    public static PlayerInstance findPlayerInstance(Player p) {
+
+        PlayerInstance player = onlinePlayers.stream().filter(x -> x.getPlayer().getUniqueId().equals(p.getUniqueId())).findFirst().orElse(null);
+
+        return player;
+    }
 
     // When new player joins ass Player + Friends to the list of online players
     @EventHandler

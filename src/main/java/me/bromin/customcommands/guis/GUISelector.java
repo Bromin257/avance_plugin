@@ -65,7 +65,7 @@ public class GUISelector implements Listener {
 
         } else if (h == 2) {
 
-
+            FriendList.openFriendSelector(p);
         }
     }
 
@@ -82,6 +82,7 @@ public class GUISelector implements Listener {
         if ((a == Action.RIGHT_CLICK_AIR) || (a == Action.RIGHT_CLICK_BLOCK)) {
             if (!(h == 0)) {
                 openNewGui(e.getPlayer(), h);
+                System.out.println("item clicked" + h);
             }
         }
     }
