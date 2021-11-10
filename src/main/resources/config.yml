@@ -1,0 +1,40 @@
+custominventory:
+  mapselector:
+    itemtype: COMPASS
+    enchantment: BINDING_CURSE
+    displayname: Map Selector
+    namecolor: RED
+    slot: 0
+    custommodeldata: 1
+  friends:
+    itemtype: ENCHANTED_BOOK
+    enchantment: BINDING_CURSE
+    displayname: Friends
+    namecolor: DARK_GREEN
+    slot: 1
+    custommodeldata: 2
+gamemodes:
+  adventure:
+    itemtype: GRASS_BLOCK
+    displayname: Adventure Maps
+    namecolor: GREEN
+    custommodeldata: 1
+    index: 0
+  puzzle:
+    itemtype: BOOKSHELF
+    displayname: Puzzle Maps
+    namecolor: RED
+    custommodeldata: 2
+    index: 1
+  parkour:
+    itemtype: SLIME_BLOCK
+    displayname: Parkour Maps
+    namecolor: GREEN
+    custommodeldata: 3
+    index: 2
+  minigames:
+    itemtype: GLASS
+    displayname: Mini Games
+    namecolor: WHITE
+    custommodeldata: 4
+    index: 3

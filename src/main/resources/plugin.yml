@@ -1,0 +1,27 @@
+name: CustomCommands
+version: '${project.version}'
+main: me.bromin.customcommands.Main
+api-version: 1.16
+authors: [ Bromin ]
+description: Custom commands plugin (1.16.5)
+
+commands:
+  clear:
+    description: Clears the user's inventory
+    usage: /<command>
+  maps:
+    description: Open the map selector
+    usage: /<command>
+  friends:
+    description: Opens the friend list
+    usage: /<command>
+  friend:
+    description: Add friend
+  heal:
+    description: Heal
+  feed:
+    description: Feed
+  farm:
+    description: Farm
+  head:
+    description: Head player
