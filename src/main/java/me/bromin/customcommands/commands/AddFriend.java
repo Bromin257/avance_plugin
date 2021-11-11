@@ -31,6 +31,7 @@ public class AddFriend implements CommandExecutor {
         int executerUser = 0;
         int argsUser = 0;
 
+        // Get the id of the executer and argument users
         // Try Connecting to the DB and
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_players", "test", "Test123!");
@@ -75,18 +76,63 @@ public class AddFriend implements CommandExecutor {
                 stmt.setInt(2, argsUser);
 
                 stmt.executeUpdate();
+
+                p.sendMessage(ChatColor.GREEN + "You have added " + user + " as a friend! Wait for him to accept.");
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
         else if (action.equals("remove")) {
-            // Remove freind
+            try {
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_players", "test", "Test123!");
+
+                PreparedStatement stmt = conn.prepareStatement("DELETE FROM tbl_friends WHERE user_id = ? AND friend_id = ?");
+
+                stmt.setInt(1, executerUser);
+                stmt.setInt(2, argsUser);
+
+                stmt.executeUpdate();
+
+                p.sendMessage(ChatColor.GREEN + "You have removed " + user + " from you friend list!");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         else if (action.equals("accept")) {
-            // Accept friend request
+            try {
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_players", "test", "Test123!");
+
+                PreparedStatement stmt = conn.prepareStatement("UPDATE tbl_friends SET status = accepted WHERE user_id = ? AND friend_id = ?");
+
+                stmt.setInt(1, executerUser);
+                stmt.setInt(2, argsUser);
+
+                stmt.executeUpdate();
+
+                p.sendMessage(ChatColor.GREEN + "Friend request accepted from:" + argsUser);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         else if (action.equals("deny")) {
-            // Deny freind request
+            try {
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_players", "test", "Test123!");
+
+                PreparedStatement stmt = conn.prepareStatement("UPDATE tbl_friends SET status = denied WHERE user_id = ? AND friend_id = ?");
+
+                stmt.setInt(1, executerUser);
+                stmt.setInt(2, argsUser);
+
+                stmt.executeUpdate();
+
+                p.sendMessage(ChatColor.GREEN + "Friend request from" + argsUser + "has been denied!");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         else {
             p.sendMessage(ChatColor.RED + "Usage: /friend <action> <username> ");

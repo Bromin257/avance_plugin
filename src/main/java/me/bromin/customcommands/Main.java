@@ -3,6 +3,8 @@ package me.bromin.customcommands;
 import me.bromin.customcommands.commands.*;
 import me.bromin.customcommands.guis.CustomInventory;
 import me.bromin.customcommands.guis.GUISelector;
+import me.bromin.customcommands.guis.GamemodeList;
+import me.bromin.customcommands.guis.MapList;
 import me.bromin.customcommands.managers.PlayerManager;
 import me.bromin.customcommands.managers.SQLManager;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -26,7 +28,8 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new NewUser(), this);
         getServer().getPluginManager().registerEvents(new Test(), this);
         getServer().getPluginManager().registerEvents(new PlayerManager(), this);
-
+        getServer().getPluginManager().registerEvents(new GamemodeList(), this);
+        getServer().getPluginManager().registerEvents(new MapList(), this);
 
         config.options().copyDefaults(true);
         saveConfig();

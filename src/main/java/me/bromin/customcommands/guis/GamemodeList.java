@@ -6,7 +6,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -22,13 +24,12 @@ public class GamemodeList implements Listener {
     public static void openGamemodeList(Player p) {
 
         int mapType;
-        Player player;
         Inventory gui;
 
         // Get config.yml file
         FileConfiguration config = Main.getCustomConfig();
 
-        gui = Bukkit.createInventory(null, InventoryType.HOPPER, "Maps");
+        gui = Bukkit.createInventory(null, InventoryType.HOPPER, "Gamemodes");
 
         for (String key: config.getConfigurationSection("gamemodes").getKeys(false)) {
             String m = config.getConfigurationSection("gamemodes").getString(key + ".itemtype");
@@ -50,16 +51,19 @@ public class GamemodeList implements Listener {
     }
 
 
-/*
-    public void gameGUI(int i) {
+    @EventHandler
+    public void openMapList(InventoryClickEvent e) {
+        String invName = e.getView().getTitle();
+        if (invName.equals("Gamemodes")) {
+            System.out.println("Gamemode cliked");
+            Player p = (Player) e.getWhoClicked();
+            //int i = e.getCurrentItem().getItemMeta().getCustomModelData();
 
-        Inventory gui;
-
-        gui = Bukkit.createInventory(null, InventoryType.CHEST, "Adventure Maps");
-
-        player.openInventory(gui);
+            MapList.openMapList(p);
+        }
 
     }
-*/
+
+
 
 }

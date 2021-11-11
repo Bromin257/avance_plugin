@@ -25,7 +25,6 @@ gamemodes:
     itemtype: BOOKSHELF
     displayname: Puzzle Maps
     namecolor: RED
-    custommodeldata: 2
     index: 1
   parkour:
     itemtype: SLIME_BLOCK
@@ -45,26 +44,34 @@ maps:
     name: Adventure 1
     gamemode: adventure
     localfilename:
-    description: This is the description for ad 1
+    description: This is the description for aventure 1
     difficulty: 6/10
     itemtype: PAPER
-    nbt: 1
     worldspawn:
+    namecolor: RED
   adventure2:
     name: Adventure 1
     gamemode: adventure
     localfilename:
-    description: This is the description for ad 1
-    difficulty: 6/10
+    description: This is the description for adventure 2
+    difficulty: 4/10
     itemtype: PAPER
-    nbt: 1
     worldspawn:
+    namecolor: RED
   puzzle1:
     name: Puzzle 1
     gamemode: adventure
     localfilename:
-    description: This is the description for ad 1
-    difficulty: 6/10
+    description: This is the description for puzzle 1
+    difficulty: 8/10
     itemtype: PAPER
-    nbt: 1
     worldspawn:
+    namecolor: RED
+  parkour_spiral:
+    name: Spiral Parkour
+    gamemode: Parkour
+    description: A fun challenging parkour inside a spiral!
+    difficulty: 8/10
+    itemtype: PAPER
+    worldspawn:
+    namecolor: BLUE

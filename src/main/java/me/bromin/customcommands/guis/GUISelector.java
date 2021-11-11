@@ -40,7 +40,7 @@ public class GUISelector implements Listener {
 
     // Event handler for player interaction with inventory items
     @EventHandler
-    public void openGuiEvent(PlayerInteractEvent e) throws SQLException {
+    public void openGuiEvent(PlayerInteractEvent e) {
         Player p = e.getPlayer();
         Action a = e.getAction();
         PlayerInventory i = p.getInventory();
@@ -55,22 +55,5 @@ public class GUISelector implements Listener {
             }
         }
     }
-
-    // Event handler for player interaction with map selector items
-    /*
-    @EventHandler
-    public void openMapList(InventoryClickEvent e) {
-        Player p = (Player) e.getWhoClicked();
-        int i = Objects.requireNonNull(e.getCurrentItem().getItemMeta().getCustomModelData());
-
-
-        MapList map = new MapList();
-        map.mapType = i;
-        map.player = p;
-        map.openMaps();
-    }
-
-     */
-
 
 }
