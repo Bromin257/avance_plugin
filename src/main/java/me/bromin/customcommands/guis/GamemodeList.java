@@ -18,8 +18,6 @@ import java.util.List;
 
 public class GamemodeList implements Listener {
 
-
-
     // Open maps according to the map type given by
     public static void openGamemodeList(Player p) {
 
@@ -45,6 +43,8 @@ public class GamemodeList implements Listener {
             meta.setCustomModelData(l);
             item.setItemMeta(meta);
 
+            System.out.println("Custom MD is:" + l);
+
             gui.setItem(i, item);
         }
         p.openInventory(gui);
@@ -54,12 +54,12 @@ public class GamemodeList implements Listener {
     @EventHandler
     public void openMapList(InventoryClickEvent e) {
         String invName = e.getView().getTitle();
-        if (invName.equals("Gamemodes")) {
-            System.out.println("Gamemode cliked");
-            Player p = (Player) e.getWhoClicked();
-            //int i = e.getCurrentItem().getItemMeta().getCustomModelData();
 
-            MapList.openMapList(p);
+        if (invName.equals("Gamemodes")) {
+            Player p = (Player) e.getWhoClicked();
+            int i = e.getCurrentItem().getItemMeta().getCustomModelData();
+
+            MapList.openMapList(p, i);
         }
 
     }

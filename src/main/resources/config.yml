@@ -40,47 +40,40 @@ gamemodes:
     index: 3
 
 maps:
-  adventure1:
-    name: Adventure 1
-    gamemode: adventure
-    localfilename:
-    description: This is the description for aventure 1
+  parkour_paradise_3:
+    name: Parkour Paradise 3
+    gamemode: parkour
+    worldname: parkour_paradise_3
+    description: Parkour Paradise 3
     difficulty: 6/10
-    itemtype: PAPER
-    spawnpoint_x:
-    spawnpoint_z:
-    spawnpoint_y:
+    itemtype: OAK_LOG
+    spawnpoint_x: 0
+    spawnpoint_z: 0
+    spawnpoint_y: 60
     namecolor: RED
-  adventure2:
-    name: Adventure 1
+    custommodeldata: 1
+  parkour_pyramid:
+    name: Parkour Pyramid
     gamemode: adventure
-    localfilename:
-    description: This is the description for adventure 2
+    worldname: parkour_pyramid
+    description: Parkour Pyramid
     difficulty: 4/10
     itemtype: PAPER
-    spawnpoint_x:
-    spawnpoint_z:
-    spawnpoint_y:
+    spawnpoint_x: 0
+    spawnpoint_z: 0
+    spawnpoint_y: 60
     namecolor: RED
-  puzzle1:
-    name: Puzzle 1
-    gamemode: adventure
-    localfilename:
-    description: This is the description for puzzle 1
-    difficulty: 8/10
-    itemtype: PAPER
-    spawnpoint_x:
-    spawnpoint_z:
-    spawnpoint_y:
-    namecolor: RED
-  parkour_spiral:
-    name: Spiral Parkour
+    custommodeldata: 2
+  parkour_spiral_2:
+    name: Parkour Spiral
     gamemode: Parkour
+    worldname: parkour_spiral_2
     description: A fun challenging parkour inside a spiral!
     creator: 
     difficulty: 8/10
-    itemtype: PAPER
-    spawnpoint_x:
-    spawnpoint_z:
-    spawnpoint_y:
+    itemtype: GLASS
+    spawnpoint_x: -114
+    spawnpoint_z: -0
+    spawnpoint_y: 113
     namecolor: BLUE
+    custommodeldata: 3
