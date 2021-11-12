@@ -51,7 +51,7 @@ public class MapList implements Listener {
     public static void selectMap(InventoryClickEvent e) {
         String invName = e.getView().getTitle();
         if(invName.equals("Maps")) {
-            System.out.println("selectmap DONE");
+            System.out.println("selectmap DONE"); // Debug
             Player player = (Player) e.getWhoClicked();
             Location loc = new Location(Bukkit.getWorld("parkour_spiral"), 0, 53, -126);
             player.teleport(loc);

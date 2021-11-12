@@ -21,7 +21,6 @@ public class GUISelector implements Listener {
     // Get config.yml file
     FileConfiguration config = Main.getCustomConfig();
 
-    //! Find if it is used
     @EventHandler
     public void loadFriendList(PlayerJoinEvent e) {
         Player p = e.getPlayer();
