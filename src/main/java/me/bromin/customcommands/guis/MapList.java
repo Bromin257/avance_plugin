@@ -82,6 +82,7 @@ public class MapList implements Listener {
             System.out.println("selectmap DONE"); // Debug
             Player player = (Player) e.getWhoClicked();
             int i = e.getCurrentItem().getItemMeta().getCustomModelData();
+            System.out.println("Custom Model Data: " + i);
             String worldname = "world";
 
             for (String key: config.getConfigurationSection("maps").getKeys(false)) {

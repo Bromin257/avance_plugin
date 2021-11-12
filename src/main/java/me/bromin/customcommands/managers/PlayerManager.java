@@ -33,8 +33,6 @@ public class PlayerManager implements Listener {
     }
 
 
-
-
     // When player leaves, remove from online player list
     @EventHandler
     public void playerLeave(PlayerQuitEvent e) {

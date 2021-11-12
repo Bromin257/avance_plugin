@@ -1,6 +1,10 @@
 package me.bromin.customcommands.commands;
 
 import me.bromin.customcommands.Main;
+import me.bromin.customcommands.managers.FriendInstance;
+import me.bromin.customcommands.managers.PlayerInstance;
+import me.bromin.customcommands.managers.PlayerManager;
+import me.bromin.customcommands.managers.SQLManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -10,6 +14,7 @@ import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.util.List;
 import java.util.UUID;
 
 public class AddFriend implements CommandExecutor {
